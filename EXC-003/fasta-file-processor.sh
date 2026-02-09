@@ -6,7 +6,7 @@ echo -n "Number of sequences:"
 
 for fasta in $1
 do
-    num_sequences=$(grep '>' $fasta | wc -l)
+    num_sequences=$(grep '>' $fasta | wc -l | awk '{print $1}')
 
     echo " $num_sequences"
 

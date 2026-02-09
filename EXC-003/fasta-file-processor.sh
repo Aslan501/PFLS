@@ -13,7 +13,7 @@ do
 
     echo -n "Total length of sequences:"
     #tr-d deletes a character: here it does that new lines are not counted as part of the length
-    total_seq_length=$(grep -v '>' $fasta | tr -d '\n' | wc -c)
+    total_seq_length=$(grep -v '>' $fasta | tr -d '\n' | wc -c | awk '{print $1}')
 
     echo " $total_seq_length"
     echo -n "Length of the longest sequence:"
